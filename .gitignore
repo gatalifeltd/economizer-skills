@@ -1,9 +1,17 @@
-# benchmark scratch
-benchmarks/runs/*.err
+# secrets / credentials — never commit
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# benchmark raw runs — local only; commit only RESULTS.md + chart.svg
+benchmarks/runs/
+
+# python / os scratch
 __pycache__/
 *.pyc
 .DS_Store
 
 # local agent state
 .claude/
-benchmarks/runs/*.tmp

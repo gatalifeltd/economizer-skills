@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="sans-serif">
+<text x="320.0" y="24" text-anchor="middle" font-size="16" font-weight="700">Total tokens: without vs with policy</text>
+<line x1="50" y1="310" x2="590" y2="310" stroke="#999"/>
+<rect x="80" y="181.01765350937413" width="26" height="128.98234649062587" fill="#bbb"/>
+<text x="93.0" y="177.01765350937413" text-anchor="middle" font-size="9">180,654</text>
+<rect x="110" y="177.40921980751946" width="26" height="132.59078019248054" fill="#3b82f6"/>
+<text x="123.0" y="173.40921980751946" text-anchor="middle" font-size="9">185,708</text>
+<text x="106" y="326" text-anchor="middle" font-size="11" font-weight="600">codex</text>
+<text x="106" y="340" text-anchor="middle" font-size="9" fill="#16a34a">--3%</text>
+<rect x="170" y="53.42874979175707" width="26" height="256.57125020824293" fill="#bbb"/>
+<text x="183.0" y="49.42874979175707" text-anchor="middle" font-size="9">359,356</text>
+<rect x="200" y="50.0" width="26" height="260.0" fill="#3b82f6"/>
+<text x="213.0" y="46.0" text-anchor="middle" font-size="9">364,158</text>
+<text x="196" y="326" text-anchor="middle" font-size="11" font-weight="600">cursor</text>
+<text x="196" y="340" text-anchor="middle" font-size="9" fill="#16a34a">--1%</text>
+</svg>

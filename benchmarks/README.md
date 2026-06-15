@@ -16,11 +16,17 @@ working directory. Same prompt, same model, same fixture otherwise.
 Each run executes the agent **headless** in an isolated copy of the task fixture, and we
 record tokens, cost, wall-clock, and exit status.
 
-| Agent  | Invocation (headless)                                              | Token source            |
-|--------|-------------------------------------------------------------------|-------------------------|
-| Claude | `claude -p --output-format json --model <m>`                      | `.usage`, `.total_cost_usd` |
-| Codex  | `codex exec --json -m <m>`                                        | usage event in stream   |
-| Cursor | `cursor-agent -p --output-format json --model <m> --force`        | usage in result JSON    |
+| Agent  | Backend | Invocation (headless)                                        | Token source            |
+|--------|---------|--------------------------------------------------------------|-------------------------|
+| codex  | Codex CLI (ChatGPT) | `codex exec --json -m gpt-5.5`                   | `turn.completed.usage`  |
+| cursor | Cursor / Composer   | `cursor-agent -p --output-format json --model composer-2.5` | `usage` in result JSON  |
+| opus   | Claude via Cursor   | `cursor-agent … --model claude-opus-4-8-high`    | `usage` in result JSON  |
+| sonnet | Claude via Cursor   | `cursor-agent … --model claude-4.6-sonnet-medium`| `usage` in result JSON  |
+
+> The Claude arms run **through Cursor's backend** (Cursor's system prompt + harness), not
+> Claude Code — the standalone `claude` CLI is blocked from subscription use by org policy.
+> So "opus"/"sonnet" measure the *model*, comparable to each other and across arms, but
+> their absolute input baseline reflects Cursor's harness, not Claude Code's.
 
 ## Run it
 
@@ -65,4 +71,6 @@ Read these before trusting the numbers:
 - **Provider accounting differs.** Token and cost definitions are not identical across
   Claude / Codex / Cursor (e.g. cache-read accounting). Compare each agent to *itself*
   across the two arms; cross-agent absolute numbers are indicative, not exact.
-- **Raw output is committed** under `runs/` so anyone can re-parse and check our math.
+- **Raw runs stay local.** `runs/` is gitignored (it can contain repo paths and is large);
+  only the aggregated `RESULTS.md` + `chart.svg` are committed. Re-run the harness to
+  regenerate raw output and verify the numbers yourself.

@@ -1,0 +1,7 @@
+# Install once:  pip install pre-commit && pre-commit install
+# Runs gitleaks on every commit to stop secrets from being committed locally.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks

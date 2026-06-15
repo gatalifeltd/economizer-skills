@@ -14,12 +14,13 @@
 set -u
 
 # ---- config (override via env) ---------------------------------------------
-CLAUDE_MODEL="${CLAUDE_MODEL:-claude-sonnet-4-6}"
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.5}"   # ChatGPT-account: use gpt-5.5 / gpt-5.4 (NOT *-codex)
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.5}"        # ChatGPT-account: gpt-5.5 / gpt-5.4 (NOT *-codex)
 CURSOR_MODEL="${CURSOR_MODEL:-composer-2.5}"
+OPUS_MODEL="${OPUS_MODEL:-opus}"             # native claude CLI (Claude subscription)
+SONNET_MODEL="${SONNET_MODEL:-sonnet}"
 
 REPS="${REPS:-3}"
-AGENTS="${AGENTS:-codex cursor}"   # claude excluded: org disables subscription for the CLI
+AGENTS="${AGENTS:-codex cursor opus sonnet}"
 TASKS="${TASKS:-trim-log extract-json summarize grep-answer}"
 CONDITIONS="${CONDITIONS:-without with}"
 DRY_RUN="${DRY_RUN:-0}"
@@ -52,16 +53,18 @@ run_one() {
 
   local cmd model
   case "$agent" in
-    claude) model="$CLAUDE_MODEL"
-            cmd=(claude -p --output-format json --model "$CLAUDE_MODEL"
-                 --permission-mode bypassPermissions "$prompt") ;;
     codex)  model="${CODEX_MODEL:-default}"
             cmd=(codex exec --json --skip-git-repo-check)
             [ -n "$CODEX_MODEL" ] && cmd+=(-m "$CODEX_MODEL")
             cmd+=("$prompt") ;;
     cursor) model="$CURSOR_MODEL"
-            cmd=(cursor-agent -p --output-format json --model "$CURSOR_MODEL"
-                 --force --trust "$prompt") ;;
+            cmd=(cursor-agent -p --output-format json --model "$CURSOR_MODEL" --force --trust "$prompt") ;;
+    opus)   model="$OPUS_MODEL"
+            cmd=(claude -p --output-format json --model "$OPUS_MODEL"
+                 --permission-mode bypassPermissions "$prompt") ;;
+    sonnet) model="$SONNET_MODEL"
+            cmd=(claude -p --output-format json --model "$SONNET_MODEL"
+                 --permission-mode bypassPermissions "$prompt") ;;
     *) echo "unknown agent: $agent" >&2; rm -rf "$wd"; return 1 ;;
   esac
 
@@ -92,7 +95,7 @@ run_one() {
   rm -rf "$wd"
 }
 
-echo "models: claude=$CLAUDE_MODEL codex=${CODEX_MODEL:-default} cursor=$CURSOR_MODEL | reps=$REPS"
+echo "models: codex=${CODEX_MODEL:-default} cursor=$CURSOR_MODEL opus=$OPUS_MODEL sonnet=$SONNET_MODEL | reps=$REPS"
 for agent in $AGENTS; do
   for task in $TASKS; do
     for cond in $CONDITIONS; do
