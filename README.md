@@ -4,18 +4,32 @@
 reduce the cost of agentic coding — for Claude Code, Codex, and Cursor.
 
 Inspired by the format of [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills),
-but aimed at a different problem: not *correctness*, but *cost*. Long agent sessions quietly
-burn tokens by re-reading files, carrying stale history, pasting full tool outputs back into
-context, and using a flagship model for mechanical work. These twelve rules fix the common
-offenders.
+but aimed at a different problem: not *correctness*, but *cost*.
 
-> Backed by a reproducible A/B benchmark across three agents — see
-> [`benchmarks/RESULTS.md`](benchmarks/RESULTS.md).
+We tested this empirically — ~190 headless A/B runs across **Codex, Cursor/Composer, Claude
+Opus 4.8 and Sonnet 4.6** (see **[FINDINGS.md](FINDINGS.md)**). The short version: a big
+rules file doesn't save tokens (it's itself context, and modern agents are already frugal),
+but a **tight 3-rule file cuts model output by 10–25% on Claude and Cursor** — and beats the
+12-rule version on every agent. Less is more.
 
-## The 12 rules
+## The three golden rules
 
-Two tiers. **Tier A** is what the agent does inside a session. **Tier B** is how the
-surrounding workflow should be built.
+The validated, model-controllable core — this is what most people should use:
+
+1. **Trim tool outputs to the few fields that matter** — never echo full logs or files back.
+2. **Answer terse and structured, with hard caps** — ≤ N items, one sentence each, diff-only.
+3. **Don't restate context or quote large blocks back** — reference, don't reproduce.
+
+Best on output-heavy work (drafting, summaries, reviews, code generation, chat). See
+[FINDINGS.md](FINDINGS.md) for the numbers and method.
+
+## The full 12 rules (context)
+
+The three golden rules are distilled from a longer list. Two tiers: **Tier A** is what the
+agent does inside a session (the golden rules live here); **Tier B** is how the surrounding
+workflow is built. Our tests showed Tier B can't be enacted by a file the model reads — it
+belongs to whoever builds the agent loop (caching, model routing, context resets). Keep
+Tier B as guidance for orchestration, not as agent instructions.
 
 **Tier A — in-session**
 1. Maintain a compact active state (GOAL / CONSTRAINTS / DECISIONS / OPEN / NEXT).

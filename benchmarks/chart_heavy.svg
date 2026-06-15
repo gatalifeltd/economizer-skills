@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="sans-serif">
+<text x="360.0" y="26" text-anchor="middle" font-size="15" font-weight="700">Cumulative tokens over a multi-turn session</text>
+<line x1="70" y1="380" x2="700" y2="380" stroke="#999"/>
+<line x1="70" y1="50" x2="70" y2="380" stroke="#999"/>
+<text x="64" y="383.0" text-anchor="end" font-size="9" fill="#666">0k</text>
+<text x="64" y="218.0" text-anchor="end" font-size="9" fill="#666">971k</text>
+<text x="64" y="53.0" text-anchor="end" font-size="9" fill="#666">1942k</text>
+<text x="70.0" y="394" text-anchor="middle" font-size="9" fill="#666">1</text>
+<text x="385.0" y="394" text-anchor="middle" font-size="9" fill="#666">2</text>
+<text x="700.0" y="394" text-anchor="middle" font-size="9" fill="#666">3</text>
+<polyline fill="none" stroke="#3b82f6" stroke-width="2" points="70.0,360.2 385.0,319.4 700.0,221.2"/>
+<text x="550" y="50" font-size="10" fill="#3b82f6">codex without</text>
+<polyline fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,5" points="70.0,350.6 385.0,302.0 700.0,152.9"/>
+<text x="550" y="64" font-size="10" fill="#3b82f6">codex with</text>
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="70.0,275.7 385.0,225.7 700.0,96.7"/>
+<text x="550" y="78" font-size="10" fill="#16a34a">cursor without</text>
+<polyline fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,5" points="70.0,312.9 385.0,203.6 700.0,50.0"/>
+<text x="550" y="92" font-size="10" fill="#16a34a">cursor with</text>
+<text x="385.0" y="414" text-anchor="middle" font-size="10" fill="#666">turn</text>
+</svg>

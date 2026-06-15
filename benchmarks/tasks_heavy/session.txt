@@ -1,0 +1,10 @@
+List every file under src/ and give a one-line description of each module.
+Explain what src/billing/ledger.py does, going function by function.
+Trace the charge_customer flow end to end: name every file and function involved and show the relevant code.
+Find all TODO and FIXME comments in the codebase and show the code around each one.
+Read var/app.log and report every ERROR line together with its trace id.
+Which functions call _persist? Show each call site along with its enclosing function.
+Describe the data persistence approach used across the whole repository.
+Summarize everything you have learned about this system so far.
+Write a thorough architecture overview of this codebase.
+List all the issues you found and propose a concrete fix for each.

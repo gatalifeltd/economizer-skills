@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="sans-serif">
+<text x="340.0" y="24" text-anchor="middle" font-size="15" font-weight="700">Total tokens by policy arm (output-heavy tasks)</text>
+<line x1="50" y1="310" x2="630" y2="310" stroke="#999"/>
+<rect x="80" y="235.06015207976634" width="24" height="74.93984792023366" fill="#bbb"/>
+<text x="92.0" y="231.06015207976634" text-anchor="middle" font-size="8">95,395</text>
+<rect x="107" y="228.60473360862122" width="24" height="81.39526639137878" fill="#f59e0b"/>
+<text x="119.0" y="224.60473360862122" text-anchor="middle" font-size="8">103,612</text>
+<rect x="134" y="228.5794641957901" width="24" height="81.42053580420989" fill="#16a34a"/>
+<text x="146.0" y="224.5794641957901" text-anchor="middle" font-size="8">103,644</text>
+<text x="104" y="326" text-anchor="middle" font-size="11" font-weight="600">codex</text>
+<rect x="230" y="50.0" width="24" height="260.0" fill="#bbb"/>
+<text x="242.0" y="46.0" text-anchor="middle" font-size="8">330,967</text>
+<rect x="257" y="57.38475677308895" width="24" height="252.61524322691105" fill="#f59e0b"/>
+<text x="269.0" y="53.38475677308895" text-anchor="middle" font-size="8">321,566</text>
+<rect x="284" y="68.87409104642967" width="24" height="241.12590895357033" fill="#16a34a"/>
+<text x="296.0" y="64.87409104642967" text-anchor="middle" font-size="8">306,941</text>
+<text x="254" y="326" text-anchor="middle" font-size="11" font-weight="600">cursor</text>
+<rect x="380" y="258.5099053278276" width="24" height="51.490094672172425" fill="#bbb"/>
+<text x="392.0" y="254.5099053278276" text-anchor="middle" font-size="8">65,544</text>
+<rect x="407" y="250.53969684761807" width="24" height="59.46030315238191" fill="#f59e0b"/>
+<text x="419.0" y="246.53969684761807" text-anchor="middle" font-size="8">75,690</text>
+<rect x="434" y="248.19730083593515" width="24" height="61.80269916406486" fill="#16a34a"/>
+<text x="446.0" y="244.19730083593515" text-anchor="middle" font-size="8">78,672</text>
+<text x="404" y="326" text-anchor="middle" font-size="11" font-weight="600">opus</text>
+<rect x="530" y="271.6608016920133" width="24" height="38.339198307986706" fill="#bbb"/>
+<text x="542.0" y="267.6608016920133" text-anchor="middle" font-size="8">48,804</text>
+<rect x="557" y="270.459653540135" width="24" height="39.54034645986504" fill="#f59e0b"/>
+<text x="569.0" y="266.459653540135" text-anchor="middle" font-size="8">50,333</text>
+<rect x="584" y="269.2207321986101" width="24" height="40.779267801389864" fill="#16a34a"/>
+<text x="596.0" y="265.2207321986101" text-anchor="middle" font-size="8">51,910</text>
+<text x="554" y="326" text-anchor="middle" font-size="11" font-weight="600">sonnet</text>
+<rect x="540" y="40" width="10" height="10" fill="#bbb"/>
+<text x="554" y="49" font-size="10">without</text>
+<rect x="540" y="54" width="10" height="10" fill="#f59e0b"/>
+<text x="554" y="63" font-size="10">full</text>
+<rect x="540" y="68" width="10" height="10" fill="#16a34a"/>
+<text x="554" y="77" font-size="10">min</text>
+</svg>
