@@ -1,86 +1,82 @@
 # economizer-skills
 
-**Token-economy guidelines for coding agents.** Drop-in rules that cut wasted context and
-reduce the cost of agentic coding — for Claude Code, Codex, and Cursor.
+**Make your coding agent cheaper — without making it dumber.**
 
-Inspired by the format of [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills),
-but aimed at a different problem: not *correctness*, but *cost*.
+Three drop-in rules for Claude, Cursor, and Codex that cut the *expensive* part of the
+bill: model output. Not vibes — [we measured it](FINDINGS.md): ~190 headless A/B runs
+across **Claude Opus 4.8, Sonnet 4.6, Cursor/Composer, and Codex (gpt-5.5)**.
 
-We tested this empirically — ~190 headless A/B runs across **Codex, Cursor/Composer, Claude
-Opus 4.8 and Sonnet 4.6** (see **[FINDINGS.md](FINDINGS.md)**). The short version: a big
-rules file doesn't save tokens (it's itself context, and modern agents are already frugal),
-but a **tight 3-rule file cuts model output by 10–25% on Claude and Cursor** — and beats the
-12-rule version on every agent. Less is more.
+> **Why output?** Output tokens cost ~5× input, and input is mostly cache reads (~0.1×).
+> So output is a wildly disproportionate share of the bill — **~40–45% of cost on Claude**
+> despite being ~1.5% of the token count. Optimize the bill, not the token total.
 
-**Why output, not "total tokens"?** Output costs ~5× input, and input is mostly cache reads
-(~0.1× price). So output is a disproportionate share of the bill — **~40–45% of cost for
-Claude** despite being ~1.5% of the token count. Cutting output is cutting the expensive,
-model-controlled part. Don't optimize the token total; optimize the bill.
+Result: a tight 3-rule file **cuts model output 10–25% on Claude and Cursor** — and beats a
+longer 12-rule version on *every* agent. Less really is more.
+
+![tokens by policy arm](benchmarks/chart_min.svg)
 
 ## The three golden rules
 
-The validated, model-controllable core — this is what most people should use:
-
 1. **Trim tool outputs to the few fields that matter** — never echo full logs or files back.
 2. **Answer terse and structured, with hard caps** — ≤ N items, one sentence each, diff-only.
-3. **Don't restate context or quote large blocks back** — reference, don't reproduce.
+3. **Don't restate context or quote large blocks back** — reference by path/line, don't reproduce.
 
-Best on output-heavy work (drafting, summaries, reviews, code generation, chat). See
-[FINDINGS.md](FINDINGS.md) for the numbers and method.
-
-## The full 12 rules (context)
-
-The three golden rules are distilled from a longer list. Two tiers: **Tier A** is what the
-agent does inside a session (the golden rules live here); **Tier B** is how the surrounding
-workflow is built. Our tests showed Tier B can't be enacted by a file the model reads — it
-belongs to whoever builds the agent loop (caching, model routing, context resets). Keep
-Tier B as guidance for orchestration, not as agent instructions.
-
-**Tier A — in-session**
-1. Maintain a compact active state (GOAL / CONSTRAINTS / DECISIONS / OPEN / NEXT).
-2. Keep recent context only; summarize older history.
-3. Attach only necessary files and tools.
-4. Trim tool outputs to essential fields.
-5. Use structured outputs with hard length limits.
-6. Prefer deterministic code over model calls for mechanical transforms.
-
-**Tier B — workflow**
-7. Start a new session per task.
-8. Cache stable instructions and repeated schemas.
-9. Use retrieval with a strict token budget.
-10. Route simple steps to smaller models.
-11. Split planning, execution, and review into separate contexts.
-12. Measure token cost per workflow; fix the worst offender first.
-
-See [`CLAUDE.md`](CLAUDE.md) for the expanded rationale and [`EXAMPLES.md`](EXAMPLES.md)
-for before/after pairs.
+> Best on output-heavy work: drafting, summaries, reviews, code generation, chat.
+> For trivial one-liners, use judgment — brevity shouldn't cost correctness.
 
 ## Install
 
-**Claude Code — per project:** drop [`CLAUDE.md`](CLAUDE.md) into your repo root.
+### Claude Code (plugin)
+```
+/plugin marketplace add gatalifeltd/economizer-skills
+/plugin install token-economy@economizer-skills
+```
+Or drop [`CLAUDE.md`](CLAUDE.md) into your repo root:
 ```bash
 curl -O https://raw.githubusercontent.com/gatalifeltd/economizer-skills/main/CLAUDE.md
 ```
 
-**Claude Code — as a plugin/skill:** this repo ships a
-[`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) exposing the
-[`token-economy`](skills/token-economy/SKILL.md) skill.
+### Cursor (rule)
+Copy [`.cursor/rules/token-economy.mdc`](.cursor/rules/token-economy.mdc) into your
+project's `.cursor/rules/`. With `alwaysApply: true` it loads into every Composer/Agent
+session automatically.
 
-**Codex (or any `AGENTS.md`-aware tool):** drop [`AGENTS.md`](AGENTS.md) into your repo root.
+### Codex (AGENTS.md)
+Drop [`AGENTS.md`](AGENTS.md) into your repo root (auto-read), or into `~/.codex/AGENTS.md`
+to apply it globally:
 ```bash
 curl -O https://raw.githubusercontent.com/gatalifeltd/economizer-skills/main/AGENTS.md
 ```
 
-**Cursor:** copy [`.cursor/rules/token-economy.mdc`](.cursor/rules/token-economy.mdc) into
-your project's `.cursor/rules/`. See [`CURSOR.md`](CURSOR.md).
+## Does it actually work?
 
-## Does it actually help?
+Read the full story — hypothesis → 3 experiment series → numbers → conclusions — in
+**[FINDINGS.md](FINDINGS.md)**. Output reduction with the minimal rules (vs no policy):
 
-We A/B test the rules: the same tasks run **with** and **without** the policy file, across
-**Claude, Codex, and Cursor**, measuring tokens, cost, and whether the task still succeeds.
-The harness and methodology (including its limitations) live in
-[`benchmarks/`](benchmarks/); generated numbers in
-[`benchmarks/RESULTS.md`](benchmarks/RESULTS.md).
+| Agent | output Δ |
+|-------|---------:|
+| Cursor / Composer | **−24.6%** |
+| Claude Opus 4.8 | **−21.7%** |
+| Claude Sonnet 4.6 | **−8.8%** |
+| Codex gpt-5.5 | −3.7% |
+
+Reproduce it yourself: [`benchmarks/`](benchmarks/) (`bash run_min.sh && python3 analyze_min.py`).
+
+## The longer story: 12 rules, and why only 3 ship
+
+The three golden rules are distilled from a longer list of 12. They split into two tiers:
+
+- **Tier A — in-session behavior the model can follow** (trim outputs, terse answers, read
+  the minimum, deterministic code over LLM calls, compact running state). A file the model
+  *reads* can influence these. The three golden rules are the subset that actually moved the
+  needle in testing.
+- **Tier B — orchestration the model can't do to itself** (new session per task, cache the
+  stable prompt prefix, retrieval token budgets, route simple steps to a cheaper model,
+  split plan/execute/review into separate calls, measure cost per workflow). These are
+  decisions made by the *program* that runs the agent — they belong to whoever builds the
+  loop, not in a file the model reads. Real, but out of scope for a drop-in rule.
+
+The full 12-rule reference lives in [FINDINGS.md](FINDINGS.md).
 
 ## From the makers
 

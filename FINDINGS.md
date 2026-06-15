@@ -152,3 +152,29 @@ python3 analyze_min.py # regenerates RESULTS_min.md + chart_min.svg
 ```
 
 Full per-arm numbers: [`benchmarks/RESULTS_min.md`](benchmarks/RESULTS_min.md).
+
+## Appendix — the full 12 rules
+
+The three golden rules are the Tier-A subset that measurably worked. Here is the original
+list they were distilled from.
+
+**Tier A — in-session (a file the model reads can influence these):**
+1. Maintain a compact active state (goal / constraints / decisions / open / next).
+2. Keep recent context only; summarize older history.
+3. Attach only necessary files and tools.
+4. **Trim tool outputs to essential fields.** ← golden
+5. Use structured outputs with hard length limits. ← golden (rule 2)
+6. Prefer deterministic code over LLM calls for mechanical transforms.
+   _(Golden rule 3 — "don't restate/quote large blocks" — emerged from testing as the
+   single highest-leverage output cut.)_
+
+**Tier B — orchestration (the program running the agent does these, not the model):**
+7. Start a new session per task.
+8. Cache stable instructions and repeated schemas.
+9. Use retrieval with a strict token budget.
+10. Route simple steps to smaller models.
+11. Split planning, execution, and review into separate contexts.
+12. Measure token cost per workflow; fix the worst offender first.
+
+Tier B is sound engineering advice, but a prompt can't enact it — it lives in the agent
+loop you build, not in a file the model reads.

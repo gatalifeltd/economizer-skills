@@ -32,8 +32,8 @@ jstr()   { python3 -c 'import json,sys;print(json.dumps(sys.argv[1]))' "$1"; }
 
 inject() {  # $1=condition $2=workdir
   case "$1" in
-    full) cp "$ROOT/CLAUDE.md" "$ROOT/AGENTS.md" "$2/" 2>/dev/null
-          mkdir -p "$2/.cursor/rules"; cp "$ROOT/.cursor/rules/token-economy.mdc" "$2/.cursor/rules/" 2>/dev/null ;;
+    full) cp "$HERE/policy_full/CLAUDE.md" "$HERE/policy_full/AGENTS.md" "$2/" 2>/dev/null
+          mkdir -p "$2/.cursor/rules"; cp "$HERE/policy_full/.cursor/rules/token-economy.mdc" "$2/.cursor/rules/" 2>/dev/null ;;
     min)  cp "$HERE/policy_min/CLAUDE.md" "$HERE/policy_min/AGENTS.md" "$2/" 2>/dev/null
           mkdir -p "$2/.cursor/rules"; cp "$HERE/policy_min/.cursor/rules/token-economy.mdc" "$2/.cursor/rules/" 2>/dev/null ;;
   esac

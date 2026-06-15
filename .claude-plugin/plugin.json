@@ -1,11 +1,12 @@
 {
-  "name": "economizer-skills",
-  "description": "Token-economy guidelines for coding agents: cut wasted context and reduce the cost of agentic coding",
+  "name": "token-economy",
+  "description": "Token economy for coding agents: trim tool outputs, answer terse, don't reproduce large blocks — cuts model output 10-25% on Claude/Cursor",
   "version": "1.0.0",
   "author": {
-    "name": "gatalifeltd"
+    "name": "gatalife",
+    "url": "https://gatalife.com/"
   },
   "license": "MIT",
-  "keywords": ["token-economy", "cost", "context-management", "guidelines", "best-practices"],
+  "keywords": ["token-economy", "cost", "output", "context-management", "best-practices"],
   "skills": ["./skills/token-economy"]
 }

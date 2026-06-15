@@ -1,0 +1,16 @@
+{
+  "name": "economizer-skills",
+  "owner": {
+    "name": "gatalife",
+    "url": "https://gatalife.com/"
+  },
+  "plugins": [
+    {
+      "name": "token-economy",
+      "source": "./",
+      "description": "Trim tool outputs, answer terse with hard caps, don't reproduce large blocks. Cuts model output 10-25% on Claude/Cursor (see FINDINGS.md).",
+      "version": "1.0.0",
+      "author": { "name": "gatalife" }
+    }
+  ]
+}

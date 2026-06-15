@@ -1,36 +1,25 @@
 ---
 name: token-economy
-description: Token-economy guidelines to reduce wasted context and cut the cost of agentic coding. Use when running long agent sessions, processing large tool outputs, or designing multi-step agent workflows — to keep context small, trim outputs, prefer deterministic code, and route work to the cheapest sufficient model.
+description: Token economy — trim tool outputs, answer terse with hard length caps, and don't reproduce large blocks. Use during any coding/agent task to cut the most expensive, model-controlled cost (output tokens) without hurting correctness. Most effective on output-heavy work — drafting, summaries, reviews, code generation.
 license: MIT
 ---
 
 # Token Economy
 
-Practical rules that lower the token cost of agentic coding without sacrificing quality.
-Two tiers: **Tier A** is in-session behavior the agent executes directly; **Tier B** is
-how the surrounding workflow should be designed.
+Output tokens cost ~5× input, and input is mostly cached — so the cheapest win you control
+is a shorter, tighter response. In ~190 A/B runs (Claude Opus/Sonnet, Cursor, Codex) these
+three rules cut model output 10–25% on Claude and Cursor, beating a longer 12-rule version.
 
-## Tier A — In-session
+## The three rules
 
-1. **Compact active state** — keep a short GOAL / CONSTRAINTS / DECISIONS / OPEN / NEXT
-   block; update it instead of re-deriving context.
-2. **Recent context only** — collapse finished sub-tasks to one-line outcomes; drop stale
-   tool output.
-3. **Only necessary files & tools** — read the minimum; targeted grep + small slice over
-   whole files.
-4. **Trim tool outputs** — keep the few fields that matter; never feed full dumps back.
-5. **Structured outputs with hard limits** — fixed schemas, explicit length caps.
-6. **Deterministic code over model calls** — mechanical transforms go to a script.
+1. **Trim tool outputs to the few fields that matter.** Never echo full logs or files back —
+   extract with `grep`/`jq`/`--format`/`head`, then reason over the result, not the dump.
+2. **Answer terse and structured, with hard caps.** ≤ N items, one sentence each, diff-only.
+   No preamble, no restating the question, no "here's my plan" filler.
+3. **Don't restate context or quote large blocks back.** Reference by path/line; don't
+   reproduce code the reader already has.
 
-## Tier B — Workflow
+For trivial one-liners, use judgment — brevity shouldn't cost correctness.
 
-7. **New session per task** — carry only the compact state forward.
-8. **Cache stable instructions & schemas** — pin the unchanging prefix.
-9. **Retrieval on a strict token budget** — cap context; more isn't more signal.
-10. **Route simple steps to smaller models** — reserve the flagship for hard reasoning.
-11. **Split plan / execute / review** into separate contexts.
-12. **Measure tokens per workflow** — rank by spend, fix the worst offender first.
-
-See the repository's `CLAUDE.md` for the expanded rationale and `EXAMPLES.md` for
-before/after comparisons. Benchmark numbers across Claude, Codex, and Cursor live in
-`benchmarks/RESULTS.md`.
+The full 12-rule list (including orchestration-level rules for people *building* agent
+loops) and the benchmark behind these three live in the repository's README and FINDINGS.md.
