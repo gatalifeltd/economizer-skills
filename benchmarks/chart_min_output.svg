@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 370" font-family="sans-serif">
+<text x="340.0" y="24" text-anchor="middle" font-size="14" font-weight="700">Output tokens by policy arm — lower is cheaper (output ≈ 5× input)</text>
+<line x1="56" y1="314" x2="624" y2="314" stroke="#999"/>
+<rect x="86" y="133.79061526897885" width="24" height="180.20938473102115" fill="#bbb"/>
+<text x="98.0" y="129.79061526897885" text-anchor="middle" font-size="8">1,084</text>
+<rect x="113" y="103.20627080425211" width="24" height="210.7937291957479" fill="#f59e0b"/>
+<text x="125.0" y="99.20627080425211" text-anchor="middle" font-size="8">1,268</text>
+<rect x="140" y="140.39783098894017" width="24" height="173.60216901105983" fill="#16a34a"/>
+<text x="152.0" y="136.39783098894017" text-anchor="middle" font-size="8">1,044</text>
+<text x="152.0" y="125.39783098894017" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">+4%</text>
+<text x="110" y="330" text-anchor="middle" font-size="11" font-weight="600">codex</text>
+<rect x="236" y="56.0" width="24" height="258.0" fill="#bbb"/>
+<text x="248.0" y="52.0" text-anchor="middle" font-size="8">1,552</text>
+<rect x="263" y="69.76849565124024" width="24" height="244.23150434875976" fill="#f59e0b"/>
+<text x="275.0" y="65.76849565124024" text-anchor="middle" font-size="8">1,469</text>
+<rect x="290" y="119.39879738000644" width="24" height="194.60120261999356" fill="#16a34a"/>
+<text x="302.0" y="115.39879738000644" text-anchor="middle" font-size="8">1,171</text>
+<text x="302.0" y="104.39879738000644" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">+25%</text>
+<text x="260" y="330" text-anchor="middle" font-size="11" font-weight="600">cursor</text>
+<rect x="386" y="140.82723075271127" width="24" height="173.17276924728873" fill="#bbb"/>
+<text x="398.0" y="136.82723075271127" text-anchor="middle" font-size="8">1,042</text>
+<rect x="413" y="142.8772683345861" width="24" height="171.1227316654139" fill="#f59e0b"/>
+<text x="425.0" y="138.8772683345861" text-anchor="middle" font-size="8">1,030</text>
+<rect x="440" y="178.42048749060453" width="24" height="135.57951250939547" fill="#16a34a"/>
+<text x="452.0" y="174.42048749060453" text-anchor="middle" font-size="8">816</text>
+<text x="452.0" y="163.42048749060453" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">+22%</text>
+<text x="410" y="330" text-anchor="middle" font-size="11" font-weight="600">opus</text>
+<rect x="536" y="197.48029635992697" width="24" height="116.51970364007302" fill="#bbb"/>
+<text x="548.0" y="193.48029635992697" text-anchor="middle" font-size="8">701</text>
+<rect x="563" y="196.20594867389673" width="24" height="117.79405132610329" fill="#f59e0b"/>
+<text x="575.0" y="192.20594867389673" text-anchor="middle" font-size="8">709</text>
+<rect x="590" y="207.68892945345215" width="24" height="106.31107054654784" fill="#16a34a"/>
+<text x="602.0" y="203.68892945345215" text-anchor="middle" font-size="8">640</text>
+<text x="602.0" y="192.68892945345215" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">+9%</text>
+<text x="560" y="330" text-anchor="middle" font-size="11" font-weight="600">sonnet</text>
+<rect x="534" y="38" width="10" height="10" fill="#bbb"/>
+<text x="548" y="47" font-size="10">without</text>
+<rect x="534" y="52" width="10" height="10" fill="#f59e0b"/>
+<text x="548" y="61" font-size="10">full</text>
+<rect x="534" y="66" width="10" height="10" fill="#16a34a"/>
+<text x="548" y="75" font-size="10">min</text>
+<text x="340.0" y="362" text-anchor="middle" font-size="9" fill="#16a34a">green % = output saved by the 3-rule "min" set vs no policy</text>
+</svg>

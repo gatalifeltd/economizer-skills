@@ -13,7 +13,11 @@ across **Claude Opus 4.8, Sonnet 4.6, Cursor/Composer, and Codex (gpt-5.5)**.
 Result: a tight 3-rule file **cuts model output 10–25% on Claude and Cursor** — and beats a
 longer 12-rule version on *every* agent. Less really is more.
 
-![tokens by policy arm](benchmarks/chart_min.svg)
+![output tokens saved by the 3-rule set](benchmarks/chart_min_output.svg)
+
+_Output tokens by policy arm — green % is what the 3-rule "min" set saves vs no policy.
+(Total token count is dominated by cheap cached input and barely moves — see
+[FINDINGS.md](FINDINGS.md) for why output, not the total, is the number that matters.)_
 
 ## The three golden rules
 

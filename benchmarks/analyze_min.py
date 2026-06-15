@@ -87,21 +87,30 @@ def main():
         lines.append(f"| {a} | {wo:,.0f} | {fu:,.0f} | {mi:,.0f} | {fd} | {md} |")
         chart.append((a, mean(tot.get((a,"without"),[])), mean(tot.get((a,"full"),[])), mean(tot.get((a,"min"),[]))))
 
-    lines += ["", "![arms](chart_min.svg)", ""]
+    out_chart = [(a, mean(out.get((a, "without"), [])), mean(out.get((a, "full"), [])),
+                  mean(out.get((a, "min"), []))) for a in agents]
+
+    lines += ["", "### Output tokens by arm — the economy (lower = better)", "",
+              "![output by arm](chart_min_output.svg)", "",
+              "### Total tokens by arm (dominated by noisy, cached input)", "",
+              "![total by arm](chart_min.svg)", ""]
     open(os.path.join(HERE, "RESULTS_min.md"), "w").write("\n".join(lines) + "\n")
-    write_chart(chart)
-    print("wrote RESULTS_min.md and chart_min.svg")
+    write_chart(chart, "chart_min.svg", "Total tokens by policy arm (input-dominated)")
+    write_chart(out_chart, "chart_min_output.svg",
+                "Output tokens by policy arm — lower is cheaper (output ≈ 5× input)",
+                highlight="min")
+    print("wrote RESULTS_min.md, chart_min.svg, chart_min_output.svg")
     for a, w, f, m in chart:
         print(f"  {a}: total without={w:,.0f} full={f:,.0f} min={m:,.0f}")
 
 
-def write_chart(data):
-    W, H, pad = 680, 360, 50
+def write_chart(data, fname, title, highlight=None):
+    W, H, pad = 680, 370, 56
     maxv = max([max(w, f, m) for _, w, f, m in data] + [1])
     bw, gap = 24, 150
     cols = {"without": "#bbb", "full": "#f59e0b", "min": "#16a34a"}
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="sans-serif">']
-    svg.append(f'<text x="{W/2}" y="24" text-anchor="middle" font-size="15" font-weight="700">Total tokens by policy arm (output-heavy tasks)</text>')
+    svg.append(f'<text x="{W/2}" y="24" text-anchor="middle" font-size="14" font-weight="700">{title}</text>')
     base = H - pad
     svg.append(f'<line x1="{pad}" y1="{base}" x2="{W-pad}" y2="{base}" stroke="#999"/>')
     for i, (a, w, f, m) in enumerate(data):
@@ -111,12 +120,17 @@ def write_chart(data):
             bx = x + j * (bw + 3)
             svg.append(f'<rect x="{bx}" y="{base-h}" width="{bw}" height="{h}" fill="{cols[lab]}"/>')
             svg.append(f'<text x="{bx+bw/2}" y="{base-h-4}" text-anchor="middle" font-size="8">{v:,.0f}</text>')
+            # savings % for the highlighted arm vs without
+            if highlight and lab == highlight and w:
+                svg.append(f'<text x="{bx+bw/2}" y="{base-h-15}" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">{(w-v)/w*100:+.0f}%</text>')
         svg.append(f'<text x="{x+bw}" y="{base+16}" text-anchor="middle" font-size="11" font-weight="600">{a}</text>')
     lx = W - pad - 90
     for k, (lab, col) in enumerate(cols.items()):
-        svg.append(f'<rect x="{lx}" y="{40+k*14}" width="10" height="10" fill="{col}"/>')
-        svg.append(f'<text x="{lx+14}" y="{49+k*14}" font-size="10">{lab}</text>')
-    open(os.path.join(HERE, "chart_min.svg"), "w").write("\n".join(svg) + "\n</svg>\n")
+        svg.append(f'<rect x="{lx}" y="{38+k*14}" width="10" height="10" fill="{col}"/>')
+        svg.append(f'<text x="{lx+14}" y="{47+k*14}" font-size="10">{lab}</text>')
+    if highlight:
+        svg.append(f'<text x="{W/2}" y="{H-8}" text-anchor="middle" font-size="9" fill="#16a34a">green % = output saved by the 3-rule "min" set vs no policy</text>')
+    open(os.path.join(HERE, fname), "w").write("\n".join(svg) + "\n</svg>\n")
 
 
 if __name__ == "__main__":
