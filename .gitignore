@@ -1,0 +1,9 @@
+# benchmark scratch
+benchmarks/runs/*.err
+__pycache__/
+*.pyc
+.DS_Store
+
+# local agent state
+.claude/
+benchmarks/runs/*.tmp

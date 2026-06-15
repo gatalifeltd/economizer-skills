@@ -1,0 +1,1 @@
+Somewhere in the src/ directory of the current project, a function named "reconcile_ledger" is defined. Report the file path (relative to the current directory) and the line number where it is defined, in the form path:line. Output only that.

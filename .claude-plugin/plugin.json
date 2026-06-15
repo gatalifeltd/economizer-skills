@@ -1,0 +1,11 @@
+{
+  "name": "economizer-skills",
+  "description": "Token-economy guidelines for coding agents: cut wasted context and reduce the cost of agentic coding",
+  "version": "1.0.0",
+  "author": {
+    "name": "gatalifeltd"
+  },
+  "license": "MIT",
+  "keywords": ["token-economy", "cost", "context-management", "guidelines", "best-practices"],
+  "skills": ["./skills/token-economy"]
+}

@@ -1,0 +1,1 @@
+The file server.log is in the current directory. Report only the 3 most recent lines that contain "ERROR", in chronological order. Output just those 3 lines and nothing else.

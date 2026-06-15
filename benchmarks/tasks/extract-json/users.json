@@ -1,0 +1,1095 @@
+{
+  "meta": {
+    "count": 45,
+    "generatedAt": "2026-05-01T00:00:00Z"
+  },
+  "users": [
+    {
+      "id": 1000,
+      "email": "ada0@example.com",
+      "profile": {
+        "displayName": "Ada0",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 0
+      }
+    },
+    {
+      "id": 1001,
+      "email": "ada@example.com",
+      "profile": {
+        "displayName": "Grace1",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 3
+      }
+    },
+    {
+      "id": 1002,
+      "email": "linus2@example.com",
+      "profile": {
+        "displayName": "Linus2",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 6
+      }
+    },
+    {
+      "id": 1003,
+      "email": "alan3@example.com",
+      "profile": {
+        "displayName": "Alan3",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 9
+      }
+    },
+    {
+      "id": 1004,
+      "email": "edsger4@example.com",
+      "profile": {
+        "displayName": "Edsger4",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 12
+      }
+    },
+    {
+      "id": 1005,
+      "email": "barbara5@example.com",
+      "profile": {
+        "displayName": "Barbara5",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 15
+      }
+    },
+    {
+      "id": 1006,
+      "email": "john6@example.com",
+      "profile": {
+        "displayName": "John6",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 18
+      }
+    },
+    {
+      "id": 1007,
+      "email": "ken7@example.com",
+      "profile": {
+        "displayName": "Ken7",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 21
+      }
+    },
+    {
+      "id": 1008,
+      "email": "dennis8@example.com",
+      "profile": {
+        "displayName": "Dennis8",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 24
+      }
+    },
+    {
+      "id": 1009,
+      "email": "margaret9@example.com",
+      "profile": {
+        "displayName": "Margaret9",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 27
+      }
+    },
+    {
+      "id": 1010,
+      "email": "donald10@example.com",
+      "profile": {
+        "displayName": "Donald10",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 30
+      }
+    },
+    {
+      "id": 1011,
+      "email": "tim11@example.com",
+      "profile": {
+        "displayName": "Tim11",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 33
+      }
+    },
+    {
+      "id": 1012,
+      "email": "brian12@example.com",
+      "profile": {
+        "displayName": "Brian12",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 36
+      }
+    },
+    {
+      "id": 1013,
+      "email": "guido13@example.com",
+      "profile": {
+        "displayName": "Guido13",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 39
+      }
+    },
+    {
+      "id": 1014,
+      "email": "james14@example.com",
+      "profile": {
+        "displayName": "James14",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 42
+      }
+    },
+    {
+      "id": 1015,
+      "email": "bjarne15@example.com",
+      "profile": {
+        "displayName": "Bjarne15",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 45
+      }
+    },
+    {
+      "id": 1016,
+      "email": "yukihiro16@example.com",
+      "profile": {
+        "displayName": "Yukihiro16",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 48
+      }
+    },
+    {
+      "id": 1017,
+      "email": "rasmus17@example.com",
+      "profile": {
+        "displayName": "Rasmus17",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 51
+      }
+    },
+    {
+      "id": 1018,
+      "email": "anders18@example.com",
+      "profile": {
+        "displayName": "Anders18",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 54
+      }
+    },
+    {
+      "id": 1019,
+      "email": "graydon19@example.com",
+      "profile": {
+        "displayName": "Graydon19",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 57
+      }
+    },
+    {
+      "id": 1020,
+      "email": "ada20@example.com",
+      "profile": {
+        "displayName": "Ada20",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 60
+      }
+    },
+    {
+      "id": 1021,
+      "email": "grace21@example.com",
+      "profile": {
+        "displayName": "Grace21",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 63
+      }
+    },
+    {
+      "id": 1022,
+      "email": "linus22@example.com",
+      "profile": {
+        "displayName": "Linus22",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 66
+      }
+    },
+    {
+      "id": 1023,
+      "email": "alan23@example.com",
+      "profile": {
+        "displayName": "Alan23",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 69
+      }
+    },
+    {
+      "id": 1024,
+      "email": "edsger24@example.com",
+      "profile": {
+        "displayName": "Edsger24",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 72
+      }
+    },
+    {
+      "id": 1025,
+      "email": "barbara25@example.com",
+      "profile": {
+        "displayName": "Barbara25",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 75
+      }
+    },
+    {
+      "id": 1026,
+      "email": "john26@example.com",
+      "profile": {
+        "displayName": "John26",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 78
+      }
+    },
+    {
+      "id": 1027,
+      "email": "ken27@example.com",
+      "profile": {
+        "displayName": "Ken27",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 81
+      }
+    },
+    {
+      "id": 1028,
+      "email": "dennis28@example.com",
+      "profile": {
+        "displayName": "Dennis28",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 84
+      }
+    },
+    {
+      "id": 1029,
+      "email": "margaret29@example.com",
+      "profile": {
+        "displayName": "Margaret29",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 87
+      }
+    },
+    {
+      "id": 1030,
+      "email": "donald30@example.com",
+      "profile": {
+        "displayName": "Donald30",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 90
+      }
+    },
+    {
+      "id": 1031,
+      "email": "tim31@example.com",
+      "profile": {
+        "displayName": "Tim31",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 93
+      }
+    },
+    {
+      "id": 1032,
+      "email": "brian32@example.com",
+      "profile": {
+        "displayName": "Brian32",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 96
+      }
+    },
+    {
+      "id": 1033,
+      "email": "guido33@example.com",
+      "profile": {
+        "displayName": "Guido33",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 99
+      }
+    },
+    {
+      "id": 1034,
+      "email": "james34@example.com",
+      "profile": {
+        "displayName": "James34",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 102
+      }
+    },
+    {
+      "id": 1035,
+      "email": "bjarne35@example.com",
+      "profile": {
+        "displayName": "Bjarne35",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 105
+      }
+    },
+    {
+      "id": 1036,
+      "email": "yukihiro36@example.com",
+      "profile": {
+        "displayName": "Yukihiro36",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 108
+      }
+    },
+    {
+      "id": 1037,
+      "email": "rasmus37@example.com",
+      "profile": {
+        "displayName": "Rasmus37",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 111
+      }
+    },
+    {
+      "id": 1038,
+      "email": "anders38@example.com",
+      "profile": {
+        "displayName": "Anders38",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 114
+      }
+    },
+    {
+      "id": 1039,
+      "email": "graydon39@example.com",
+      "profile": {
+        "displayName": "Graydon39",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 117
+      }
+    },
+    {
+      "id": 1040,
+      "email": "ada40@example.com",
+      "profile": {
+        "displayName": "Ada40",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 120
+      }
+    },
+    {
+      "id": 1041,
+      "email": "grace41@example.com",
+      "profile": {
+        "displayName": "Grace41",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 123
+      }
+    },
+    {
+      "id": 1042,
+      "email": "grace@example.com",
+      "profile": {
+        "displayName": "Linus42",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user",
+        "admin"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 126
+      }
+    },
+    {
+      "id": 1043,
+      "email": "alan43@example.com",
+      "profile": {
+        "displayName": "Alan43",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 129
+      }
+    },
+    {
+      "id": 1044,
+      "email": "edsger44@example.com",
+      "profile": {
+        "displayName": "Edsger44",
+        "locale": "en-US",
+        "timezone": "UTC",
+        "preferences": {
+          "theme": "dark",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      },
+      "roles": [
+        "user"
+      ],
+      "audit": {
+        "createdAt": "2026-01-01T00:00:00Z",
+        "lastLoginAt": "2026-05-01T00:00:00Z",
+        "loginCount": 132
+      }
+    }
+  ]
+}

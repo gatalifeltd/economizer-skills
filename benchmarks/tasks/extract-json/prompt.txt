@@ -1,0 +1,1 @@
+The file users.json in the current directory contains an object with a "users" array. Output one line per user as "<id>\t<email>" (id, a tab, then email). Output only those lines, no header, no commentary.

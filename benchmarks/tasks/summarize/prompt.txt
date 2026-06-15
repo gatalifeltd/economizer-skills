@@ -1,0 +1,1 @@
+Read NOTES.md in the current directory and summarize it in at most 5 bullet points. Each bullet must be one sentence. Output only the bullets.
