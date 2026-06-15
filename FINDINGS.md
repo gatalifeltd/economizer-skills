@@ -15,9 +15,14 @@ The honest answer:
 - **The full 12-rule file does *not* reliably save tokens.** On simple tasks it slightly
   *increases* them — the file is itself context, resent every turn, and modern agents are
   already frugal.
-- **The only channel a rules file actually controls is output length.** Trimming the file
-  to **3 minimal rules** cuts model output by **9–25%** on Claude and Cursor — and the
-  3-rule version beats the 12-rule version on every agent.
+- **The only channel a rules file actually controls is output length** — and **output is
+  where the money is.** Output tokens cost ~5× input, and input is mostly cache reads
+  (~0.1× price), so output is a *disproportionate share of the bill*: ~**40–45% of cost for
+  Claude** even though it's ~1.5% of the token count. Don't read the raw token total — it
+  weights cheap cached input equally with expensive output.
+- Trimming the file to **3 minimal rules** cuts model output by **9–25%** on Claude and
+  Cursor — a direct cut to the most expensive, model-controlled component — and the 3-rule
+  version beats the 12-rule version on every agent.
 - So the rules are worth shipping **as a tight 3-rule file, aimed at output-heavy coding
   work** on Claude/Cursor-style agents. The other 9 rules are real but belong to whoever
   *builds the agent loop* (caching, model routing, context resets) — not to a file the
@@ -97,16 +102,35 @@ The **minimal 3-rule file beats the full 12-rule file on output for every agent*
 cuts output 9–25% on Claude and Cursor. The verbose 12-rule file barely moves output —
 its length dilutes its own instruction.
 
-**Total tokens (input+output):** net total moved little and inconsistently, because input
-(system prompt + tool reads + cache) dominates and is noisy. Cursor netted **+7.3%** total
-savings with the minimal file; the others were within input noise. This is expected: total
-savings only materialize when output is a meaningful share of the workload.
+**Don't score this by raw token count — score it by cost.** Total *token count* moved
+little and noisily, because the count is dominated by input (system prompt + tool reads +
+cache), which a rules file can't touch. But tokens aren't priced equally:
+
+- Output costs **~5× input**.
+- Input is mostly **cache reads**, priced **~0.1× fresh input**.
+
+So weight the tokens by price (illustratively output = 5×, cache read = 0.1× fresh input)
+and output's share of the **bill** is far larger than its share of the count:
+
+| Agent | output % of token count | **output % of cost** |
+|-------|------------------------:|---------------------:|
+| Opus 4.8 | ~1.5% | **~45%** |
+| Sonnet 4.6 | ~1.4% | **~42%** |
+| Codex | ~1.1% | ~14% |
+| Cursor/Composer | ~0.5% | ~6% |
+
+For Claude models, output is **~40–45% of the cost**. Cutting it 20–25% is a real cut to
+nearly half the bill — invisible if you only watch the token total, which is why the
+total-count view understates the win. (Net total *cost* was still partly masked by
+run-to-run variance in cache-read volume, which the rules don't control.)
 
 ## Conclusion
 
 - **For Claude (Opus/Sonnet) and Cursor coding agents, a minimal token-economy file is a
-  good idea and worth using** — it reliably trims output by ~10–25% with negligible weight,
-  best on output-heavy work (drafting, summaries, reviews, code generation, chat).
+  good idea and worth using** — it reliably trims output by ~10–25%, and **output is the
+  expensive, model-controlled part of the bill** (~5× input price; input is largely cached).
+  For Claude that's ~40–45% of cost, so the saving lands where it matters. Biggest on
+  output-heavy work (drafting, summaries, reviews, code generation, chat).
 - **Less is more.** Three sharp rules beat twelve — the 12-rule file's bulk both adds
   resent weight and dilutes the instruction that actually works.
 - **The big context wins (compact state, summarization, retrieval budgets, model routing,

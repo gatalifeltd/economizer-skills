@@ -12,6 +12,11 @@ rules file doesn't save tokens (it's itself context, and modern agents are alrea
 but a **tight 3-rule file cuts model output by 10–25% on Claude and Cursor** — and beats the
 12-rule version on every agent. Less is more.
 
+**Why output, not "total tokens"?** Output costs ~5× input, and input is mostly cache reads
+(~0.1× price). So output is a disproportionate share of the bill — **~40–45% of cost for
+Claude** despite being ~1.5% of the token count. Cutting output is cutting the expensive,
+model-controlled part. Don't optimize the token total; optimize the bill.
+
 ## The three golden rules
 
 The validated, model-controllable core — this is what most people should use:
