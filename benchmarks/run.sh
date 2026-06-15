@@ -15,11 +15,11 @@ set -u
 
 # ---- config (override via env) ---------------------------------------------
 CLAUDE_MODEL="${CLAUDE_MODEL:-claude-sonnet-4-6}"
-CODEX_MODEL="${CODEX_MODEL:-}"   # empty = codex default (required for ChatGPT-account auth)
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.5}"   # ChatGPT-account: use gpt-5.5 / gpt-5.4 (NOT *-codex)
 CURSOR_MODEL="${CURSOR_MODEL:-composer-2.5}"
 
 REPS="${REPS:-3}"
-AGENTS="${AGENTS:-claude codex cursor}"
+AGENTS="${AGENTS:-codex cursor}"   # claude excluded: org disables subscription for the CLI
 TASKS="${TASKS:-trim-log extract-json summarize grep-answer}"
 CONDITIONS="${CONDITIONS:-without with}"
 DRY_RUN="${DRY_RUN:-0}"

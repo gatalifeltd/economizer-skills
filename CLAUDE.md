@@ -97,3 +97,7 @@ attack the top consumer. Most savings come from one or two hotspots.
 **These guidelines are working if:** context stays small across long tasks, tool outputs
 enter reasoning trimmed not raw, mechanical work is done by code not tokens, and your
 cost-per-task trends down without quality dropping.
+
+---
+
+_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._

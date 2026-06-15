@@ -63,6 +63,10 @@ The harness and methodology (including its limitations) live in
 [`benchmarks/`](benchmarks/); generated numbers in
 [`benchmarks/RESULTS.md`](benchmarks/RESULTS.md).
 
+## From the makers
+
+Built by the team behind **[Gatalife](https://gatalife.com/)** — check out our apps.
+
 ## License
 
 [MIT](LICENSE).

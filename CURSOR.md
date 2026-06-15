@@ -42,3 +42,7 @@ overhead isn't worth it — use judgment.
 
 **Working if:** context stays small across long sessions, outputs enter trimmed, mechanical
 work is done by code, and cost-per-task trends down without quality dropping.
+
+---
+
+_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._

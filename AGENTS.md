@@ -61,3 +61,7 @@ otherwise).
 **Working if:** context stays small across long tasks, tool outputs enter reasoning
 trimmed, mechanical work is done by code, and cost-per-task trends down without quality
 dropping.
+
+---
+
+_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._
