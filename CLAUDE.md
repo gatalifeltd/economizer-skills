@@ -12,7 +12,3 @@ Claude and Cursor in our tests (see [FINDINGS.md](FINDINGS.md)). Merge with proj
    reproduce. The reader already has the code.
 
 For trivial one-liners, use judgment — brevity shouldn't cost correctness.
-
----
-
-_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._

@@ -1,8 +1,7 @@
 {
   "name": "economizer-skills",
   "owner": {
-    "name": "gatalife",
-    "url": "https://gatalife.com/"
+    "name": "gatalife"
   },
   "plugins": [
     {

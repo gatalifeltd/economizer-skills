@@ -3,8 +3,7 @@
   "description": "Token economy for coding agents: trim tool outputs, answer terse, don't reproduce large blocks — cuts model output 10-25% on Claude/Cursor",
   "version": "1.0.0",
   "author": {
-    "name": "gatalife",
-    "url": "https://gatalife.com/"
+    "name": "gatalife"
   },
   "license": "MIT",
   "keywords": ["token-economy", "cost", "output", "context-management", "best-practices"],

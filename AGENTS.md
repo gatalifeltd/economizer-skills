@@ -12,7 +12,3 @@ response. See [FINDINGS.md](FINDINGS.md). Merge with project rules.
    reproduce.
 
 For trivial one-liners, use judgment — brevity shouldn't cost correctness.
-
----
-
-_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._

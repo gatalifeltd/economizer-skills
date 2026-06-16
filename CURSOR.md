@@ -16,7 +16,3 @@ project's `.cursor/rules/`. With `alwaysApply: true` it loads into every session
 3. **Don't restate context or quote large blocks back** — reference by path/line, don't reproduce.
 
 For trivial one-liners, use judgment — brevity shouldn't cost correctness.
-
----
-
-_From the makers — check out our apps at [gatalife.com](https://gatalife.com/)._
