@@ -4,10 +4,7 @@ globs:
 alwaysApply: true
 ---
 
-# Token economy — three rules
-
-Output costs ~5× input and input is mostly cached, so the cheapest win you control is a
-shorter, tighter response.
+# Token economy rules
 
 1. **Trim tool outputs to the few fields that matter** — never echo full logs or files back.
 2. **Answer terse and structured, with hard caps** — ≤ N items, one sentence each, diff-only.
