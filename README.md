@@ -4,7 +4,7 @@
 
 Three drop-in rules for Claude, Cursor, and Codex that cut the *expensive* part of the
 bill: model output. Not vibes — [we measured it](FINDINGS.md): ~190 headless A/B runs
-across **Claude Opus 4.8, Sonnet 4.6, Cursor/Composer, and Codex (gpt-5.5)**.
+across **Claude Opus 4.8, Sonnet 4.6, Cursor/Composer 2.5, and Codex (gpt-5.5)**.
 
 > **Why output?** Output tokens cost ~5× input, and input is mostly cache reads (~0.1×).
 > So output is a wildly disproportionate share of the bill — **~40–45% of cost on Claude**
@@ -64,7 +64,7 @@ Read the full story — hypothesis → 3 experiment series → numbers → concl
 
 | Agent | output Δ |
 |-------|---------:|
-| Cursor / Composer | **−24.6%** |
+| Cursor / Composer 2.5 | **−24.6%** |
 | Claude Opus 4.8 | **−21.7%** |
 | Claude Sonnet 4.6 | **−8.8%** |
 | Codex gpt-5.5 | −3.7% |
