@@ -30,6 +30,11 @@ _Output tokens by policy arm — green % is what the 3-rule "min" set saves vs n
 
 ## Install
 
+> Install **only the file for your tool** — you don't need several formats in one project.
+> (This repo ships all three because it's the source; tools like Cursor auto-detect
+> `CLAUDE.md`/`AGENTS.md` *and* `.cursor/rules`, so keeping them together just duplicates
+> the same rules. One file per project is enough.)
+
 ### Claude Code (plugin)
 ```
 /plugin marketplace add gatalifeltd/economizer-skills
