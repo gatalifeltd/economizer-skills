@@ -19,14 +19,24 @@ _Output tokens by policy arm — green % is what the 3-rule "min" set saves vs n
 (Total token count is dominated by cheap cached input and barely moves — see
 [FINDINGS.md](FINDINGS.md) for why output, not the total, is the number that matters.)_
 
-## The three golden rules
+## The rules
+
+Rules 1-3 are the benchmarked output rules. Rules 4-7 are cache rules.
 
 1. **Trim tool outputs to the few fields that matter** — never echo full logs or files back.
 2. **Answer terse and structured, with hard caps** — ≤ N items, one sentence each, diff-only.
 3. **Don't restate context or quote large blocks back** — reference by path/line, don't reproduce.
+4. **Batch independent calls into one message** — reads, searches and checks that don't depend on each other go out together; one call per turn only when the next step needs the result.
+5. **Read by range, not whole files** — `grep -n` first, then only the needed lines; a whole file only when the task needs all of it; don't re-read an unchanged file.
+6. **One small screenshot per check** — scaled or zoomed for your own checks; full size only for QA evidence a human reviews.
+7. **Send wide exploration to a subagent** — when finding the answer means reading more than ~50k tokens, let a subagent read and return only the conclusion; open the cited lines before acting on it.
 
 > Best on output-heavy work: drafting, summaries, reviews, code generation, chat.
 > For trivial one-liners, use judgment — brevity shouldn't cost correctness.
+>
+> Rules 4-7 target the cache, not output. In long agent sessions every call re-reads the whole
+> context from cache, and cache reads and writes were ~85% of spend in our own Claude Code
+> usage (output ~10-16%). They are not part of the benchmarks below.
 
 ## Install
 
